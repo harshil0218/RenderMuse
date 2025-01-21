@@ -1,14 +1,61 @@
 import React from 'react'
 import PricingCard from './PricingCard';
 
-const List = ({ children }) => {
-    return (
-      <p className="text-base text-body-color dark:text-dark-6">{children}</p>
-    );
-  };
+const subscriptionPlans = [
+  {
+    id: 1,
+    type: "Free",
+    price: "$0",
+    subscription: "month",
+    description: "Great for individuals exploring text-to-image generation.",
+    buttonText: "Choose Free",
+    features: [
+      "50 credits/month",
+      "Generate up to 5 images/day",
+      "Basic styles and resolutions",
+      "Standard processing speed",
+      "Community support"
+    ]
+  },
+  {
+    id: 2,
+    type: "Premium",
+    price: "$19.99",
+    subscription: "month",
+    description: "Ideal for creators and professionals with moderate needs.",
+    buttonText: "Choose Premium",
+    features: [
+      "1,000 credits/month",
+      "Generate up to 100 images/month",
+      "All styles and resolutions",
+      "Faster processing speed",
+      "Priority email support",
+      "Discounted rate for additional credits"
+    ]
+  },
+  {
+    id: 3,
+    type: "Enterprise",
+    price: "$256",
+    subscription: "year",
+    description: "Perfect for large businesses and corporations.",
+    buttonText: "Choose Enterprise",
+    features: [
+      "10,000+ credits/month",
+      "Unlimited image generation",
+      "Custom styles and high-resolution outputs",
+      "Priority processing speed",
+      "Dedicated account manager",
+      "API access for integration",
+      "Advanced analytics and reporting",
+      "24/7 priority support"
+    ]
+  }
+];
+
 function Pricing() {
   return (
-    <section className="relative z-0 overflow-hidden bg-white pb-12 pt-20 dark:bg-dark lg:pb-[90px] lg:pt-[120px]">
+    <section className="relative z-0 overflow-hidden bg-white pb-5 pt-5 dark:bg-dark px-6 lg:pb-[20px] lg:pt-[50px]">
       <div className="container mx-auto">
         <div className="-mx-4 flex flex-wrap">
           <div className="w-full px-4">
@@ -25,52 +72,23 @@ function Pricing() {
           </div>
         </div>
 
-        <div className="-mx-4 flex flex-wrap justify-center">
+        <div className="-mx-4 flex  flex-wrap justify-center">
           <div className="-mx-4 flex flex-wrap">
-            <PricingCard
-              type="Personal"
-              price="$59"
-              subscription="year"
-              description="Perfect for using in a personal website or a client project."
-              buttonText="Choose Personal"
-            >
-              <List>1 User</List>
-              <List>All UI components</List>
-              <List>Lifetime access</List>
-              <List>Free updates</List>
-              <List>Use on 1 (one) project</List>
-              <List>3 Months support</List>
-            </PricingCard>
-            <PricingCard
-              type="Professional"
-              price="$199"
-              subscription="year"
-              description="Perfect for startups and small businesses.  "
-              buttonText="Choose Business"
+            {subscriptionPlans.map((plan) => (
+              <PricingCard 
+                key={plan.id}
+                type={plan.type}
+                price={plan.price}
+                subscription={plan.subscription}
+                description={plan.description}
+                buttonText={plan.buttonText}
+                features={plan.features}
+              />
+                
               
-            >
-              <List>5 User</List>
-              <List>All UI components</List>
-              <List>Lifetime access</List>
-              <List>Free updates</List>
-              <List>Use on 3 (Three) project</List>
-              <List>4 Months support</List>
-              <List>Quick Support Access</List>
-            </PricingCard>
-            <PricingCard
-              type="Enterprise"
-              price="$256"
-              subscription="year"
-              description="Perfect for large businesses and corporations."
-              buttonText="Choose Professional"
-            >
-              <List>Unlimited User</List>
-              <List>All UI components</List>
-              <List>Lifetime access</List>
-              <List>Free updates</List>
-              <List>Unlimited project</List>
-              <List>12 Months support</List>
-            </PricingCard>
+            ))}
+            
+            
           </div>
         </div>
       </div>
