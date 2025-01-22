@@ -1,8 +1,8 @@
 import React from "react";
 
-function Footer() {
+function Footer({handleGetStartedClick}) {
   return (
-    <footer class="bg-gray-100 dark:bg-gray-700  ">
+    <footer class="bg-gray-200 dark:bg-gray-700  ">
       <div class="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
         <div class="flex justify-center text-yellow-600">
         <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="40" height="40" viewBox="0 0 48 48">
@@ -19,20 +19,29 @@ function Footer() {
         </p>
 
         <ul class="mt-8 flex flex-wrap justify-center gap-6 md:gap-8 lg:gap-12 text-gray-800 dark:text-gray-100 ">
+        <li>
+            <a
+              class=" transition hover:text-gray-900 dark:hover:text-gray-300 "
+              href="#welcome"
+            >
+              {" "}
+              Home{" "}
+            </a>
+          </li>
           <li>
             <a
               class=" transition hover:text-gray-900 dark:hover:text-gray-300 "
-              href="#"
+              href="#aboutus"
             >
               {" "}
               About{" "}
             </a>
           </li>
-
+          
           <li>
             <a
               class=" transition hover:text-gray-900 dark:hover:text-gray-300 "
-              href="#"
+              href="#pricing"
             >
               {" "}
               Pricing{" "}
@@ -42,7 +51,7 @@ function Footer() {
           <li>
             <a
               class="transition hover:text-gray-900 dark:hover:text-gray-300"
-              href="#"
+              onClick={handleGetStartedClick}
             >
               {" "}
               Get Started{" "}

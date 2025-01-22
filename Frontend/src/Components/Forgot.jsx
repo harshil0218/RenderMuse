@@ -27,7 +27,7 @@ function Forgot({ onBack }) {
   return (
 
     <div className="justify-center px-2  items-center content-center flex  bg-gray-100 dark:bg-gray-800">
-      <div className=" place-content-center w-screen  md:w-[40vb] lg:w-[55vb] content-center rounded-lg border border-gray-200 bg-gray-100 p-4 shadow sm:p-6 md:p-8 dark:border-gray-700 dark:bg-gray-800">
+      <div className=" place-content-center w-screen  md:w-[40vb] lg:w-[55vb] content-center rounded-lg   bg-gray-100 p-4  sm:p-6 md:p-8  dark:bg-gray-800">
       
       
         <form className="space-y-6" onSubmit={handleSubmit}>

@@ -1,10 +1,12 @@
 import { React, useState } from "react";
-
+import { useNavigate } from 'react-router-dom';
 function Login({ onSignup, onForgotPassword }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
+  
   const mockLoginApi = async (credentials) => {
     // Mimic API delay using setTimeout
     return new Promise((resolve, reject) => {
@@ -37,8 +39,10 @@ function Login({ onSignup, onForgotPassword }) {
     try {
       const response = await mockLoginApi({ email, password });
       // Save the mock token (you can use localStorage or cookies here)
+      
+
+      navigate('/chat')
       localStorage.setItem("token", response.token);
-      alert("Login successful! Mock token stored.");
     } catch (error) {
       setError(error.message);
     } finally {
@@ -47,10 +51,9 @@ function Login({ onSignup, onForgotPassword }) {
   };
 
   return (
-    // <div className="justify-center items-center content-center flex h-screen bg-gray-100 dark:bg-gray-900">
-    //   <div className="w-full max-w-sm place-content-center content-center rounded-lg border border-gray-200 bg-white p-4 shadow sm:p-6 md:p-8 dark:border-gray-700 dark:bg-gray-800">
+   
     <div className="justify-center px-2  items-center content-center flex  bg-gray-100 dark:bg-gray-800">
-      <div className=" place-content-center w-screen  md:w-[40vb] lg:w-[55vb] content-center rounded-lg border border-gray-200 bg-gray-100 p-4 shadow sm:p-6 md:p-8 dark:border-gray-700 dark:bg-gray-800">
+      <div className=" place-content-center w-screen  md:w-[40vb] lg:w-[55vb] content-center rounded-lg  bg-gray-100 p-4  sm:p-6 md:p-8  dark:bg-gray-800">
        <form className="space-y-6" onSubmit={handleSubmit}>
           <h5 className="text-xl font-medium text-gray-900 dark:text-white">
             Sign in
@@ -155,7 +158,7 @@ function Login({ onSignup, onForgotPassword }) {
 
         <button
           type="submit"
-          className="w-full flex items-center my-2 rounded-lg bg-gray-100 px-5 py-2.5 text-md font-medium text-gray-800 dark:text-gray-200 hover:bg-blue-200 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-900"
+          className="w-full flex items-center my-2 rounded-lg bg-gray-200 px-5 py-2.5 text-md font-medium text-gray-800 dark:text-gray-200 hover:bg-blue-200 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-900"
         >
           <img
             width="30"
@@ -169,7 +172,7 @@ function Login({ onSignup, onForgotPassword }) {
 
         <button
           type="submit"
-          className="w-full flex items-center my-2 rounded-lg bg-gray-100 px-5 py-2.5 text-md font-medium text-gray-800 dark:text-gray-200 hover:bg-blue-200 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-900"
+          className="w-full flex items-center my-2 rounded-lg bg-gray-200 px-5 py-2.5 text-md font-medium text-gray-800 dark:text-gray-200 hover:bg-blue-200 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-900"
         >
           <img
             width="30"
@@ -183,7 +186,7 @@ function Login({ onSignup, onForgotPassword }) {
 
         <button
           type="submit"
-          className="w-full flex items-center my-2 rounded-lg bg-gray-100 px-5 py-2.5 text-md font-medium text-gray-800 dark:text-gray-200 hover:bg-blue-200 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-900"
+          className="w-full flex items-center my-2 rounded-lg bg-gray-200 px-5 py-2.5 text-md font-medium text-gray-800 dark:text-gray-200 hover:bg-blue-200 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-900"
         >
           <img
             width="30"

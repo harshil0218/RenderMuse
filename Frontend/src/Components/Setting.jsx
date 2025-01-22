@@ -150,7 +150,7 @@ function Setting() {
   ];
   return (
     <div className="  w-screen sm:max-w-sm flex items-center justify-center rounded-lg bg-gray-100 dark:bg-gray-700">
-      <div className="max-w-sm w-full bg-gray-100 dark:bg-gray-800  rounded-lg">
+      <div className="max-w-sm w-full bg-gray-100 dark:bg-gray-700  rounded-lg">
         {/* Header */}
         <div className="flex items-center p-4 border-b border-gray-200 dark:border-gray-700 ">
           {activeSection !== "main" && (
@@ -181,7 +181,7 @@ function Setting() {
                 <li key={option.id}>
                   <button
                     onClick={() => handleNavigation(option.id)}
-                    className="w-full text-left p-3 bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 border-b-[2px] dark:border-gray-800 border-gray-300 rounded hover:bg-gray-300 dark:hover:bg-gray-600"
+                    className="w-full text-left p-3 bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 border-b-[2px] dark:border-gray-800 border-gray-400 rounded hover:bg-gray-300 dark:hover:bg-gray-600"
                   >
                     {option.name}
                   </button>
@@ -190,7 +190,7 @@ function Setting() {
               <li>
                 <button
                   onClick={handleLogout}
-                  className="w-full text-left p-3 bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 border-b-[2px] dark:border-gray-800 border-gray-300 rounded hover:bg-gray-300 dark:hover:bg-gray-600"
+                  className="w-full text-left p-3 bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 border-b-[2px] dark:border-gray-800 border-gray-400 rounded hover:bg-gray-300 dark:hover:bg-gray-600"
                 >
                   Logout
                 </button>
@@ -205,11 +205,11 @@ function Setting() {
                 <div>
                   <button
                     onClick={() => setActiveAccountSubsection(null)}
-                    className="mb-4 text-gray-600 dark:text-gray-300"
+                    className="mb-4 text-gray-800 dark:text-gray-300"
                   >
                     ← Back
                   </button>
-                  <div className="space-y-4">
+                  <div className="space-y-4 bg-gray-300 dark:bg-gray-800 p-3 gap-2">
                     <div>
                       <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-300">
                         Monthly Usage: {usageStats.monthlyUsage} credits
@@ -225,11 +225,11 @@ function Setting() {
                 <div>
                   <button
                     onClick={() => setActiveAccountSubsection(null)}
-                    className="mb-4 text-gray-600 dark:text-gray-300"
+                    className="mb-4 text-gray-800 dark:text-gray-300"
                   >
                     ← Back
                   </button>
-                  <div className="space-y-4">
+                  <div className="space-y-4 bg-gray-300 dark:bg-gray-800 p-3 gap-2">
                     <div>
                       <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-300">
                         Current Plan: {subscriptionPlan.type}
@@ -245,11 +245,11 @@ function Setting() {
                 <div>
                   <button
                     onClick={() => setActiveAccountSubsection(null)}
-                    className="mb-4 text-gray-600 dark:text-gray-300"
+                    className="mb-4 text-gray-800 dark:text-gray-300"
                   >
                     ← Back
                   </button>
-                  <div className="flex flex-col items-center space-y-4">
+                  <div className="flex flex-col items-center bg-gray-300 space-y-4 dark:bg-gray-800 p-3">
                     <div className="relative">
                       <img
                         src={avatar || "default-avatar.png"} // Replace with a default avatar image path
@@ -312,30 +312,27 @@ function Setting() {
                   </button>
                   <div className="space-y-4">
                     <div>
-                      <label className="block text-gray-700 dark:text-gray-300">
-                        Old Password
-                      </label>
+                      
                       <input
                         type="password"
-                        className="w-full p-2 bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-gray-300 rounded"
+                        placeholder="Current Password"
+                        className="w-full p-2 border-gray-800 dark:border-gray-600 border-[2px] bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-300 rounded"
                       />
                     </div>
                     <div>
-                      <label className="block text-gray-700 dark:text-gray-300">
-                        New Password
-                      </label>
+                      
                       <input
-                        type="password"
-                        className="w-full p-2 bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-gray-300 rounded"
+                        placeholder="New Password"
+                        type="text"
+                        className="w-full p-2 border-gray-800 dark:border-gray-600 border-[2px] bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-300 rounded"
                       />
                     </div>
                     <div>
-                      <label className="block text-gray-700 dark:text-gray-300">
-                        Confirm Password
-                      </label>
+                      
                       <input
                         type="password"
-                        className="w-full p-2 bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-gray-300 rounded"
+                        placeholder="Confirm New Password"
+                        className="w-full p-2 bg-gray-100 border-gray-800 dark:border-gray-600 border-[2px] dark:bg-gray-800 text-gray-900 dark:text-gray-300 rounded"
                       />
                     </div>
                     <button className="w-full p-3 bg-blue-500 text-white rounded hover:bg-blue-600">
@@ -352,7 +349,7 @@ function Setting() {
                   >
                     ← Back
                   </button>
-                  <div className="space-y-4">
+                  <div className="space-y-4 p-4 bg-gray-300 dark:bg-gray-800">
                     <label className="flex items-center justify-between cursor-pointer">
                       <span className="text-sm font-medium text-gray-900 dark:text-gray-300">
                         Reference User Prompts to Train Model
@@ -363,7 +360,7 @@ function Setting() {
                         className="sr-only peer"
                         onChange={(e) => setReferencePrompts(e.target.checked)}
                       />
-                      <div className="relative w-11 h-6 bg-gray-300 rounded-full peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
+                      <div className="relative w-11 h-6 bg-gray-400 rounded-full peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
                     </label>
                   </div>
                 </div>
@@ -374,7 +371,7 @@ function Setting() {
                       onClick={() =>
                         setActiveAccountSubsection("changePassword")
                       }
-                      className="w-full text-left p-3 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 border-b-[2px] dark:border-gray-800 border-gray-300 rounded hover:bg-gray-300 dark:hover:bg-gray-600"
+                      className="w-full text-left p-3 bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 border-b-[2px] dark:border-gray-800 border-gray-400 rounded hover:bg-gray-300 dark:hover:bg-gray-600"
                     >
                       Change Password
                     </button>
@@ -384,7 +381,7 @@ function Setting() {
                       onClick={() =>
                         setActiveAccountSubsection("privacySettings")
                       }
-                      className="w-full text-left p-3 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 border-b-[2px] dark:border-gray-800 border-gray-300 rounded hover:bg-gray-300 dark:hover:bg-gray-600"
+                      className="w-full text-left p-3 bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 border-b-[2px] dark:border-gray-800 border-gray-400 rounded hover:bg-gray-300 dark:hover:bg-gray-600"
                     >
                       Privacy Settings
                     </button>
@@ -392,7 +389,7 @@ function Setting() {
                   <li>
                     <button
                       onClick={() => setActiveAccountSubsection("editProfile")}
-                      className="w-full text-left p-3 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 border-b-[2px] dark:border-gray-800 border-gray-300 rounded hover:bg-gray-300 dark:hover:bg-gray-600"
+                      className="w-full text-left p-3 bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 border-b-[2px] dark:border-gray-800 border-gray-400 rounded hover:bg-gray-300 dark:hover:bg-gray-600"
                     >
                       Edit Profile
                     </button>
@@ -402,7 +399,7 @@ function Setting() {
                       onClick={() =>
                         setActiveAccountSubsection("subscriptionPlan")
                       }
-                      className="w-full text-left p-3 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 border-b-[2px] dark:border-gray-800 border-gray-300 rounded hover:bg-gray-300 dark:hover:bg-gray-600"
+                      className="w-full text-left p-3 bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 border-b-[2px] dark:border-gray-800 border-gray-400 rounded hover:bg-gray-300 dark:hover:bg-gray-600"
                     >
                       Subscription Plan
                     </button>
@@ -411,7 +408,7 @@ function Setting() {
                   <li>
                     <button
                       onClick={() => setActiveAccountSubsection("usageStats")}
-                      className="w-full text-left p-3 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 border-b-[2px] dark:border-gray-800 border-gray-300 rounded hover:bg-gray-300 dark:hover:bg-gray-600"
+                      className="w-full text-left p-3 bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 border-b-[2px] dark:border-gray-800 border-gray-400 rounded hover:bg-gray-300 dark:hover:bg-gray-600"
                     >
                       Usage Stats
                     </button>
@@ -424,7 +421,7 @@ function Setting() {
           {activeSection === "preferences" && (
             <div>
               <ul className="space-y-2 text-gray-700 dark:text-gray-300 mb-4">
-                <li className="bg-gray-100 dark:bg-gray-800 p-3 rounded border-b-[2px] dark:border-gray-700 border-gray-300">
+                <li className="bg-gray-100 dark:bg-gray-700 p-3 rounded border-b-[2px] dark:border-gray-800 border-gray-400">
                   <label className="flex items-center justify-between cursor-pointer">
                     <span className="text-sm font-medium text-gray-900 dark:text-gray-300">
                       Default Style
@@ -432,7 +429,7 @@ function Setting() {
                     <select
                       value={defaultStyle}
                       onChange={(e) => setDefaultStyle(e.target.value)}
-                      className="bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-gray-300 rounded p-2"
+                      className="bg-gray-200 dark:bg-gray-800 text-gray-900 dark:text-gray-300 rounded p-2"
                     >
                       <option value="realistic">Realistic</option>
                       <option value="artistic">Artistic</option>
@@ -440,7 +437,7 @@ function Setting() {
                     </select>
                   </label>
                 </li>
-                <li className="bg-gray-100 dark:bg-gray-800 p-3 rounded border-b-[2px] dark:border-gray-700 border-gray-300">
+                <li className="bg-gray-100 dark:bg-gray-700 p-3 rounded border-b-[2px] dark:border-gray-800 border-gray-400">
                   <label className="flex items-center justify-between cursor-pointer">
                     <span className="text-sm font-medium text-gray-900 dark:text-gray-300">
                       Resolution
@@ -448,7 +445,7 @@ function Setting() {
                     <select
                       value={resolution}
                       onChange={(e) => setResolution(e.target.value)}
-                      className="bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-gray-300 rounded p-2"
+                      className="bg-gray-200 dark:bg-gray-800 text-gray-900 dark:text-gray-300 rounded p-2"
                     >
                       <option value="low">Low</option>
                       <option value="medium">Medium</option>
@@ -463,7 +460,7 @@ function Setting() {
           {activeSection === "notifications" && (
             <div>
               <ul className="w-full space-y-4 text-gray-700 dark:text-gray-300 mb-4">
-                <li className="bg-gray-100 dark:bg-gray-800 p-3 rounded border-b-[2px] dark:border-gray-700 border-gray-300">
+                <li className="bg-gray-100 dark:bg-gray-700 p-3 rounded border-b-[2px] dark:border-gray-800 border-gray-400">
                   <label className="flex items-center justify-between cursor-pointer">
                     <span className="text-sm font-medium text-gray-900 dark:text-gray-300">
                       All Notifications
@@ -476,10 +473,10 @@ function Setting() {
                         handleAllNotificationsChange(e.target.checked)
                       }
                     />
-                    <div className="relative w-11 h-6 bg-gray-300 rounded-full peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
+                    <div className="relative w-11 h-6 bg-gray-400 rounded-full peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 dark:bg-gray-800 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
                   </label>
                 </li>
-                <li className="bg-gray-100 dark:bg-gray-800 p-3 ml-2 rounded border-b-[2px] dark:border-gray-700 border-gray-300">
+                <li className="bg-gray-100 dark:bg-gray-700 p-3 ml-2 rounded border-b-[2px] dark:border-gray-800 border-gray-400">
                   <label className="flex items-center justify-between cursor-pointer">
                     <span className="text-sm font-medium text-gray-900 dark:text-gray-300">
                       Offers and Promotions Notifications
@@ -490,13 +487,13 @@ function Setting() {
                       className="sr-only peer"
                       onChange={(e) => setOffersNotif(e.target.checked)}
                     />
-                    <div className="relative w-11 h-6 bg-gray-300 rounded-full peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
+                    <div className="relative w-11 h-6 bg-gray-400 rounded-full peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 dark:bg-gray-800 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
                   </label>
                 </li>
-                <li className="bg-gray-100 dark:bg-gray-800 p-3 ml-2 rounded border-b-[2px] dark:border-gray-700 border-gray-300">
+                <li className="bg-gray-100 dark:bg-gray-700 p-3 ml-2 rounded border-b-[2px] dark:border-gray-800 border-gray-400">
                   <label className="flex items-center justify-between cursor-pointer">
                     <span className="text-sm font-medium text-gray-900 dark:text-gray-300">
-                      Usage Notifications
+                      Usage Notification
                     </span>
                     <input
                       type="checkbox"
@@ -504,21 +501,22 @@ function Setting() {
                       className="sr-only peer"
                       onChange={(e) => setUsageNotif(e.target.checked)}
                     />
-                    <div className="relative w-11 h-6 bg-gray-300 rounded-full peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
+                    <div className="relative w-11 h-6 bg-gray-400 rounded-full peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 dark:bg-gray-800 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
                   </label>
                 </li>
-                <li className="bg-gray-100 dark:bg-gray-800 p-3 ml-2 rounded border-b-[2px] dark:border-gray-700 border-gray-300">
+                <li className="bg-gray-100 dark:bg-gray-700 p-3 ml-2 rounded border-b-[2px] dark:border-gray-800 border-gray-400">
                   <label className="flex items-center justify-between cursor-pointer">
                     <span className="text-sm font-medium text-gray-900 dark:text-gray-300">
                       Updates Notifications
                     </span>
                     <input
+                      
                       type="checkbox"
                       checked={updatesNotif}
                       className="sr-only peer"
                       onChange={(e) => setUpdatesNotif(e.target.checked)}
                     />
-                    <div className="relative w-11 h-6 bg-gray-300 rounded-full peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
+                    <div className="relative w-11 h-6 bg-gray-400 rounded-full peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 dark:bg-gray-800 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
                   </label>
                 </li>
               </ul>
@@ -530,7 +528,7 @@ function Setting() {
               <ul className="space-y-2 text-gray-700 dark:text-gray-300 mb-4">
                 <li>
                   <button
-                    className="w-full flex items-center justify-between text-left p-3 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 border-b-[2px] dark:border-gray-800 border-gray-300 rounded hover:bg-gray-300 dark:hover:bg-gray-600"
+                    className="w-full flex items-center justify-between text-left p-3 bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 border-b-[2px] dark:border-gray-800 border-gray-400 rounded hover:bg-gray-300 dark:hover:bg-gray-600"
                     onClick={() => setIsApiKeyOpen(!isApiKeyOpen)}
                   >
                     <div className="flex items-center">
@@ -545,7 +543,7 @@ function Setting() {
                         {apiKeys.map(({ id, name, key }) => (
                           <li
                             key={id}
-                            className="flex items-center justify-between bg-gray-200 dark:bg-gray-700 p-2 rounded"
+                            className="flex items-center justify-between bg-gray-200 dark:bg-gray-800 p-2 rounded"
                           >
                             <div>
                               <input
@@ -583,7 +581,7 @@ function Setting() {
                         ))}
                       </ul>
                       <button
-                        className="mt-2 flex items-center text-blue-500 hover:text-blue-700"
+                        className="mt-2 flex items-center text-gray-800 hover:text-gray-900  dark:text-gray-300 dark:hover:text-gray-200"
                         onClick={handleGenerateKey}
                       >
                         <FaPlus className="mr-1" /> Generate New Key
@@ -593,7 +591,7 @@ function Setting() {
                 </li>
                 <li>
                   <button
-                    className="w-full flex items-center justify-between text-left p-3 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 border-b-[2px] dark:border-gray-800 border-gray-300 rounded hover:bg-gray-300 dark:hover:bg-gray-600"
+                    className="w-full flex items-center justify-between text-left p-3 bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 border-b-[2px] dark:border-gray-800 border-gray-400 rounded hover:bg-gray-300 dark:hover:bg-gray-600"
                     onClick={() =>
                       setIsUsageMonitoringOpen(!isUsageMonitoringOpen)
                     }
@@ -612,7 +610,7 @@ function Setting() {
                         {apiKeys.map(({ id, name, usage }) => (
                           <li
                             key={id}
-                            className="flex justify-between bg-gray-200 dark:bg-gray-700 p-2 rounded"
+                            className="flex justify-between bg-gray-200 dark:bg-gray-800 p-2 rounded"
                           >
                             <span>{name}</span>
                             <span>{usage} credits used</span>
@@ -629,7 +627,7 @@ function Setting() {
           {activeSection === "app" && (
             <div>
               <ul className="w-full space-y-2 text-gray-700 dark:text-gray-300 mb-4">
-                <li className="bg-gray-100 dark:bg-gray-800 p-3 rounded border-b-[2px] dark:border-gray-700 border-gray-300">
+                <li className="bg-gray-100 dark:bg-gray-700 p-3 rounded border-b-[2px] dark:border-gray-800 border-gray-400">
                   <label className="flex items-center justify-between cursor-pointer">
                     <span className="text-sm font-medium text-gray-900 dark:text-gray-300">
                       Theme
@@ -637,14 +635,14 @@ function Setting() {
                     <select
                       value={theme}
                       onChange={handleThemeChange}
-                      className="bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-gray-300 rounded p-2"
+                      className="bg-gray-200 dark:bg-gray-800 text-gray-900 dark:text-gray-400 rounded p-2"
                     >
                       <option value="light">Light</option>
                       <option value="dark">Dark</option>
                     </select>
                   </label>
                 </li>
-                <li className="bg-gray-100 dark:bg-gray-800 p-3 rounded border-b-[2px] dark:border-gray-700 border-gray-300">
+                <li className="bg-gray-100 dark:bg-gray-700 p-3 rounded border-b-[2px] dark:border-gray-800 border-gray-400">
                   <label className="flex items-center justify-between cursor-pointer">
                     <span className="text-sm font-medium text-gray-900 dark:text-gray-300">
                       Language
@@ -652,7 +650,7 @@ function Setting() {
                     <select
                       value={appLanguage}
                       onChange={handleAppLanguageChange}
-                      className="bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-gray-300 rounded p-2"
+                      className="bg-gray-200 dark:bg-gray-800 text-gray-900 dark:text-gray-300 rounded p-2"
                     >
                       <option value="english">English</option>
                       <option value="hindi">Hindi</option>
@@ -669,7 +667,7 @@ function Setting() {
               <ul className="w-full space-y-2 text-gray-700 dark:text-gray-300 mb-4">
                 <li>
                   <button
-                    className="w-full text-left p-3 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 border-b-[2px] dark:border-gray-800 border-gray-300 rounded hover:bg-gray-300 dark:hover:bg-gray-600"
+                    className="w-full flex p-3 items-center justify-between  bg-gray-100 dark:bg-gray-700 text-gray-800 hover:bg-gray-300 dark:hover:bg-gray-600 dark:text-gray-200 border-b-[2px] dark:border-gray-800 border-gray-400 rounded "
                     onClick={toggleContact}
                   >
                     Contact Support{" "}
@@ -690,7 +688,7 @@ function Setting() {
                 </li>
                 <li>
                   <button
-                    className="w-full text-left p-3 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 border-b-[2px] dark:border-gray-800 border-gray-300 rounded hover:bg-gray-300 dark:hover:bg-gray-600"
+                    className="w-full flex p-3 items-center justify-between bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 border-b-[2px] dark:border-gray-800 border-gray-400 rounded hover:bg-gray-300 dark:hover:bg-gray-600"
                     onClick={toggleReportIssue}
                   >
                     Report Issue{" "}
